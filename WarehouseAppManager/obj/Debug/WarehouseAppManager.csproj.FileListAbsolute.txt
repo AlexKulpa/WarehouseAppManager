@@ -1,0 +1,15 @@
+C:\Users\cycuw\OneDrive\Studia\4 semestr\POiG\WarehouseAppManager\WarehouseAppManager\bin\Debug\WarehouseAppManager.exe.config
+C:\Users\cycuw\OneDrive\Studia\4 semestr\POiG\WarehouseAppManager\WarehouseAppManager\bin\Debug\WarehouseAppManager.exe
+C:\Users\cycuw\OneDrive\Studia\4 semestr\POiG\WarehouseAppManager\WarehouseAppManager\bin\Debug\WarehouseAppManager.pdb
+C:\Users\cycuw\OneDrive\Studia\4 semestr\POiG\WarehouseAppManager\WarehouseAppManager\obj\Debug\WarehouseAppManager.csprojAssemblyReference.cache
+C:\Users\cycuw\OneDrive\Studia\4 semestr\POiG\WarehouseAppManager\WarehouseAppManager\obj\Debug\View\MainWindow.g.cs
+C:\Users\cycuw\OneDrive\Studia\4 semestr\POiG\WarehouseAppManager\WarehouseAppManager\obj\Debug\App.g.cs
+C:\Users\cycuw\OneDrive\Studia\4 semestr\POiG\WarehouseAppManager\WarehouseAppManager\obj\Debug\WarehouseAppManager_MarkupCompile.cache
+C:\Users\cycuw\OneDrive\Studia\4 semestr\POiG\WarehouseAppManager\WarehouseAppManager\obj\Debug\WarehouseAppManager_MarkupCompile.lref
+C:\Users\cycuw\OneDrive\Studia\4 semestr\POiG\WarehouseAppManager\WarehouseAppManager\obj\Debug\View\MainWindow.baml
+C:\Users\cycuw\OneDrive\Studia\4 semestr\POiG\WarehouseAppManager\WarehouseAppManager\obj\Debug\WarehouseAppManager.g.resources
+C:\Users\cycuw\OneDrive\Studia\4 semestr\POiG\WarehouseAppManager\WarehouseAppManager\obj\Debug\WarehouseAppManager.Properties.Resources.resources
+C:\Users\cycuw\OneDrive\Studia\4 semestr\POiG\WarehouseAppManager\WarehouseAppManager\obj\Debug\WarehouseAppManager.csproj.GenerateResource.cache
+C:\Users\cycuw\OneDrive\Studia\4 semestr\POiG\WarehouseAppManager\WarehouseAppManager\obj\Debug\WarehouseAppManager.csproj.CoreCompileInputs.cache
+C:\Users\cycuw\OneDrive\Studia\4 semestr\POiG\WarehouseAppManager\WarehouseAppManager\obj\Debug\WarehouseAppManager.exe
+C:\Users\cycuw\OneDrive\Studia\4 semestr\POiG\WarehouseAppManager\WarehouseAppManager\obj\Debug\WarehouseAppManager.pdb
