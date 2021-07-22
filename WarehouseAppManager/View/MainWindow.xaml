@@ -3,84 +3,92 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        
+        xmlns:vm="clr-namespace:WarehouseAppManager.ViewModel"
         xmlns:prop="clr-namespace:WarehouseAppManager.Properties"
         
         mc:Ignorable="d"
-        Title="{x:Static prop:Resources.WindowTitleText}" Height="800" Width="400"
+        Title="{x:Static prop:Resources.WindowTitleText}" Height="576" Width="1024"
         ResizeMode="NoResize">
 
-    <Grid Background="CornflowerBlue">
+    <Window.Resources>
+        <vm:MainViewModel x:Key="mainVM"/>
+    </Window.Resources>
+
+    <Grid Margin="30">
         <Grid.RowDefinitions>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="3*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="12*"/>
-            <ColumnDefinition Width="1*"/>
-        </Grid.ColumnDefinitions>
-        
-        <Border Grid.Row="1" Grid.Column="1" Background="White" BorderBrush="Black" 
-                BorderThickness="4" CornerRadius="10">
-        <Grid> <TextBlock HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="40">NAZWA</TextBlock></Grid>
-        </Border>
-        
-        <Border Grid.Row="3" Grid.Column="1" Background="White" BorderBrush="Black" 
-                BorderThickness="4" CornerRadius="10">
-            <Grid> <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40">GABARYT</TextBlock></Grid>
-        </Border>
-        
-        <Grid Grid.Row="5" Grid.Column="1" >
+
+        <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="180"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="180"/>
             </Grid.ColumnDefinitions>
-            
-            <Border Grid.Column="0" Background="Green" BorderBrush="Black" BorderThickness="4" CornerRadius="10">
-                <Grid> <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40">A </TextBlock></Grid>
-            </Border>
-            
-            <Border Grid.Column="2" Background="Yellow" BorderBrush="Black" BorderThickness="4" CornerRadius="10">
-                <Grid> <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40">B </TextBlock></Grid>
-            </Border>
-            
-            <Border Grid.Column="4" Background="Red" BorderBrush="Black" BorderThickness="4" CornerRadius="10">
-                <Grid> <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40">C</TextBlock></Grid>
-            </Border>
-            
+            <Button x:Name="add_button"
+                    Height="50"
+                    FontSize="25"
+                    Grid.Column="0"
+                    Margin="5">
+                Dodaj
+            </Button>
+            <ComboBox
+                Grid.Column="1"
+                HorizontalAlignment="Right"
+                x:Name="magazyn_cb"
+                Height="50"
+                SelectedIndex="0"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"
+                FontSize="25"
+                Margin="5">
+                <ComboBoxItem>
+                    Magazyn 1
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Magazyn 2
+                </ComboBoxItem>
+                <ComboBoxItem>
+                    Magazyn 3
+                </ComboBoxItem>
+            </ComboBox>
+            <ComboBox
+                Grid.Column="2"
+                x:Name="koszyk_cb"
+                Height="50"
+                VerticalContentAlignment="Center"
+                HorizontalContentAlignment="Center"
+                FontSize="25"
+                SelectedIndex="0"
+                Margin="5">
+                <ComboBoxItem IsEnabled="False" Visibility="Hidden" Height="0">
+                    Koszyk
+                </ComboBoxItem>
+                <ComboBoxItem IsEnabled="False">
+                    Pomarańcze - 5kg
+                </ComboBoxItem>
+                <ComboBoxItem IsEnabled="False">
+                    Mango - 1kg
+                </ComboBoxItem>
+            </ComboBox>
         </Grid>
-        
-        <Border Grid.Row="7" Grid.Column="1" Background="White" BorderBrush="Black" BorderThickness="4" CornerRadius="10">
-            <Grid> <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40">ZATWIERDŹ</TextBlock></Grid>
-        </Border>
-        
-        <Grid Grid.Row="9" Grid.Column="1" >
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-            </Grid.ColumnDefinitions>
-            
-            <Border Grid.Column="4" Background="White" BorderBrush="Black" BorderThickness="4" CornerRadius="10">
-                <Grid> <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="40">?</TextBlock></Grid>
-            </Border>
-            
-        </Grid>
-        
+
+        <DataGrid 
+            x:Name="przedmioty_dg"
+            Grid.Row="1"
+            Margin="5"
+            IsReadOnly="True"
+            FontSize="25"
+            AlternatingRowBackground="LavenderBlush"
+            >
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Nazwa"/>
+                <DataGridTextColumn Header="Ilość"/>
+                <DataGridTextColumn Header="Jednostka"/>
+                <DataGridTextColumn Header="Regał"/>
+                <DataGridTextColumn Header="id produktu"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>
