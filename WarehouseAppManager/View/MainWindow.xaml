@@ -3,18 +3,19 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:local="clr-namespace:WarehouseAppManager"
         xmlns:vm="clr-namespace:WarehouseAppManager.ViewModel"
-        xmlns:prop="clr-namespace:WarehouseAppManager.Properties"
         
         mc:Ignorable="d"
-        Title="{x:Static prop:Resources.WindowTitleText}" Height="576" Width="1024"
+        Title="WAP" Height="576" Width="1024"
         ResizeMode="NoResize">
 
     <Window.Resources>
         <vm:MainViewModel x:Key="mainVM"/>
     </Window.Resources>
 
-    <Grid Margin="30">
+    <Grid Margin="30" DataContext="{StaticResource mainVM}">
         <Grid.RowDefinitions>
             <RowDefinition Height="90"/>
             <RowDefinition Height="*"/>
@@ -42,16 +43,23 @@
                 VerticalContentAlignment="Center"
                 HorizontalContentAlignment="Center"
                 FontSize="25"
-                Margin="5">
-                <ComboBoxItem>
-                    Magazyn 1
-                </ComboBoxItem>
-                <ComboBoxItem>
-                    Magazyn 2
-                </ComboBoxItem>
-                <ComboBoxItem>
-                    Magazyn 3
-                </ComboBoxItem>
+                Margin="5"
+                ItemsSource="{Binding Magazyny}"
+                SelectedItem="{Binding BiezacyMagazyn}"
+                >
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Nazwa}"/>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <i:InvokeCommandAction Command="{Binding ZaladujTowar}"/>
+                    </i:EventTrigger>
+                    <i:EventTrigger EventName="Loaded">
+                        <i:InvokeCommandAction Command="{Binding ZaladujTowar}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
             </ComboBox>
             <ComboBox
                 Grid.Column="2"
@@ -76,18 +84,22 @@
 
         <DataGrid 
             x:Name="przedmioty_dg"
+            AutoGenerateColumns="False"
             Grid.Row="1"
             Margin="5"
             IsReadOnly="True"
             FontSize="25"
             AlternatingRowBackground="LavenderBlush"
+            ItemsSource="{Binding Towary}"
+            SelectedItem="{Binding BiezacyTowar}"
+            SelectedIndex="{Binding IndeksZaznaczonejOsoby, Mode=TwoWay}"
             >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Nazwa"/>
-                <DataGridTextColumn Header="Ilość"/>
-                <DataGridTextColumn Header="Jednostka"/>
-                <DataGridTextColumn Header="Regał"/>
-                <DataGridTextColumn Header="id produktu"/>
+                <DataGridTextColumn Header="Nazwa" Binding="{Binding Nazwa}"/>
+                <DataGridTextColumn Header="Ilość" Binding="{Binding Ilosc}"/>
+                <DataGridTextColumn Header="Jednostka" Binding="{Binding Jednostka}"/>
+                <DataGridTextColumn Header="Regał" Binding="{Binding Regal}"/>
+                <DataGridTextColumn Header="id produktu" Binding="{Binding Id}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
