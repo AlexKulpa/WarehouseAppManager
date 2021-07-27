@@ -75,3 +75,5 @@ C:\Users\Damian\Desktop\Studia\semestr 4\Programowanie obiektowe i graficzne\PRO
 C:\Users\Damian\Desktop\Studia\semestr 4\Programowanie obiektowe i graficzne\PROJEKT\WarehouseAppManager\WarehouseAppManager\bin\Debug\System.Windows.Interactivity.dll
 C:\Users\Damian\Desktop\Studia\semestr 4\Programowanie obiektowe i graficzne\PROJEKT\WarehouseAppManager\WarehouseAppManager\bin\Debug\Microsoft.Expression.Interactions.xml
 C:\Users\Damian\Desktop\Studia\semestr 4\Programowanie obiektowe i graficzne\PROJEKT\WarehouseAppManager\WarehouseAppManager\bin\Debug\System.Windows.Interactivity.xml
+C:\Users\Damian\Desktop\Studia\semestr 4\Programowanie obiektowe i graficzne\PROJEKT\WarehouseAppManager\WarehouseAppManager\obj\Debug\View\AddWindow.g.cs
+C:\Users\Damian\Desktop\Studia\semestr 4\Programowanie obiektowe i graficzne\PROJEKT\WarehouseAppManager\WarehouseAppManager\obj\Debug\View\AddWindow.baml

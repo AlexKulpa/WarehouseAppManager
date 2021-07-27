@@ -11,6 +11,7 @@ namespace WarehouseAppManager.ViewModel
     using System.Windows.Input;
     using WarehouseAppManager.DAL.Encje;
     using WarehouseAppManager.Model;
+    using WarehouseAppManager.View;
 
     class MainViewModel:BaseViewModel
     {
@@ -116,6 +117,23 @@ namespace WarehouseAppManager.ViewModel
                         );
                 }
                 return zaladujTowar;
+            }
+        }
+
+        private ICommand otworzOknoDodawania = null;
+        public ICommand OtworzOknoDodawania
+        {
+            get
+            {
+                otworzOknoDodawania = new RelayCommand(
+                    arg =>
+                    {
+                        AddWindow ekranDodawania = new AddWindow();
+                        ekranDodawania.Show();
+                    },
+                    arg => true
+                    );
+                return otworzOknoDodawania;
             }
         }
 

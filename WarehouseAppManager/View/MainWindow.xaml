@@ -1,4 +1,11 @@
-﻿<Window x:Class="WarehouseAppManager.MainWindow"
+﻿<!-- 
+    TO DO LIST
+    - wyglad okna dodawania
+    - funkcjonalnosc okna dodawania
+    - kontrolka input liczbowy z przyciskami +/- dodajace produkt do koszyka
+    - wyswietlanie w koszyku dodanych wartosci
+-->
+<Window x:Class="WarehouseAppManager.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -9,6 +16,7 @@
         
         mc:Ignorable="d"
         Title="WAP" Height="576" Width="1024"
+        WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
 
     <Window.Resources>
@@ -31,9 +39,10 @@
                     Height="50"
                     FontSize="25"
                     Grid.Column="0"
-                    Margin="5">
-                Dodaj
-            </Button>
+                    Margin="5"
+                    Content="Dodaj"
+                    Command="{Binding OtworzOknoDodawania}"
+            />
             <ComboBox
                 Grid.Column="1"
                 HorizontalAlignment="Right"
@@ -100,6 +109,13 @@
                 <DataGridTextColumn Header="Jednostka" Binding="{Binding Jednostka}"/>
                 <DataGridTextColumn Header="Regał" Binding="{Binding Regal}"/>
                 <DataGridTextColumn Header="id produktu" Binding="{Binding Id}"/>
+                <DataGridTemplateColumn Header="ilość do koszyka">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox></TextBox>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>
