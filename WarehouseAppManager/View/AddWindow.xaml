@@ -1,18 +1,106 @@
 ﻿<Window x:Class="WarehouseAppManager.View.AddWindow"
+        x:Name="add_window"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:local="clr-namespace:WarehouseAppManager.View"
+        xmlns:vm="clr-namespace:WarehouseAppManager.ViewModel"
         mc:Ignorable="d"
         Title="AddWindow" Height="556" Width="450"
         WindowStartupLocation="CenterScreen"
+        WindowStyle="None"
+        BorderThickness="1"
         ResizeMode="NoResize">
-    <Grid>
-        <Label FontSize="40" 
-               HorizontalAlignment="Center"
-               VerticalAlignment="Center">
-            EKRAN DODAWANIA
-        </Label>
+
+    <Window.Resources>
+        <vm:AddingViewModel x:Key="addingVM"/>
+    </Window.Resources>
+
+    <Grid DataContext="{StaticResource addingVM}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+               VerticalAlignment="Center" HorizontalAlignment="Center"
+               FontSize="40"
+               Content="DODAWANIE"/>
+        
+        <Label Grid.Row="1" Grid.Column="0"
+               VerticalAlignment="Center"
+               FontSize="30"
+               Margin="5"
+               Content="Nazwa"/>
+        <TextBox Grid.Row="1" Grid.Column="1"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"
+                 Margin="5"
+                 FontSize="30"/>
+
+        <Label Grid.Row="2" Grid.Column="0"
+               VerticalAlignment="Center"
+               FontSize="30"
+               Margin="5"
+               Content="Ilość"/>
+        <TextBox Grid.Row="2" Grid.Column="1"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"
+                 Margin="5"
+                 FontSize="30"/>
+
+        <Label Grid.Row="3" Grid.Column="0"
+               VerticalAlignment="Center"
+               FontSize="30"
+               Margin="5"
+               Content="Jednostka"/>
+        <TextBox Grid.Row="3" Grid.Column="1"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"
+                 Margin="5"
+                 FontSize="30"/>
+
+        <Label Grid.Row="4" Grid.Column="0"
+               VerticalAlignment="Center"
+               FontSize="30"
+               Margin="5"
+               Content="Regał"/>
+        <TextBox Grid.Row="4" Grid.Column="1"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"
+                 Margin="5"
+                 FontSize="30"/>
+
+        <Label Grid.Row="5" Grid.Column="0"
+               VerticalAlignment="Center"
+               FontSize="30"
+               Margin="5"
+               Content="Id Pracownika"/>
+        <TextBox Grid.Row="5" Grid.Column="1"
+                 HorizontalContentAlignment="Center"
+                 VerticalContentAlignment="Center"
+                 Margin="5"
+                 FontSize="30"/>
+
+        <Button Grid.Row="6" Grid.Column="1"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                FontSize="30"
+                Margin="5"
+                Content="Dodaj"
+                Command="{Binding DodajTowarDoBazy}"
+                CommandParameter="{Binding ElementName=add_window}">
+        </Button>
     </Grid>
 </Window>

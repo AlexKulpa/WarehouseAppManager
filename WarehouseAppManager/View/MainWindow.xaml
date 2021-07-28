@@ -6,6 +6,7 @@
     - wyswietlanie w koszyku dodanych wartosci
 -->
 <Window x:Class="WarehouseAppManager.MainWindow"
+        x:Name="main_window"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -42,6 +43,7 @@
                     Margin="5"
                     Content="Dodaj"
                     Command="{Binding OtworzOknoDodawania}"
+                    CommandParameter="{Binding ElementName=main_window}"
             />
             <ComboBox
                 Grid.Column="1"

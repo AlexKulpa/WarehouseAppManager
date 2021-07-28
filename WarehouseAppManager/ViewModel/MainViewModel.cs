@@ -93,10 +93,12 @@ namespace WarehouseAppManager.ViewModel
         }
         #endregion
 
+        public AddingViewModel AddingVM { get; set; }
         public MainViewModel()
         {
             Towary = model.Towary;
             Magazyny = model.Magazyny;
+            AddingVM = new AddingViewModel(model);
         }
 
         #region POLECENIA
@@ -130,6 +132,7 @@ namespace WarehouseAppManager.ViewModel
                     {
                         AddWindow ekranDodawania = new AddWindow();
                         ekranDodawania.Show();
+                        ekranDodawania.Owner = arg as MainWindow;
                     },
                     arg => true
                     );
