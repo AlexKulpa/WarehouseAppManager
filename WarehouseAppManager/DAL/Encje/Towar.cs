@@ -11,7 +11,7 @@ namespace WarehouseAppManager.DAL.Encje
     {
         //id, ilosc, jednostka, nazwa, regał, id_magazynu
         public sbyte? Id { get; set; }
-        public sbyte Ilosc { get; set; }
+        public int Ilosc { get; set; }
         public string Jednostka { get; set; }
         public string Nazwa { get; set; }
         public string Regal { get; set; }
@@ -20,7 +20,7 @@ namespace WarehouseAppManager.DAL.Encje
         public Towar (MySqlDataReader reader)
         {
             Id = sbyte.Parse(reader["id"].ToString());
-            Ilosc = sbyte.Parse(reader["ilość"].ToString());
+            Ilosc = int.Parse(reader["ilość"].ToString());
             Jednostka = reader["jednostka"].ToString();
             Nazwa = reader["nazwa"].ToString();
             Regal = reader["regał"].ToString();
